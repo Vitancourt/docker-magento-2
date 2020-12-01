@@ -7,7 +7,7 @@ Give permissions to scripts
 Run:
 ```shell script
 chmod -R +x bin/
-chmod -R +x dev/base/
+mkdir web
 ```
 
 ## Magento project
