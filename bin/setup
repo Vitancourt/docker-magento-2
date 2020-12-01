@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dev/base/create-project
+
+dev/base/setup-install
+
+bin/magento deploy:mode:set developer

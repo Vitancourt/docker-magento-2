@@ -1,0 +1,42 @@
+#!/usr/bin/env sh
+
+echo "Running magento setup:install..."
+
+# Locale options
+MAGE_LANGUAGE=pt_BR
+MAGE_CURRENCY=BRL
+MAGE_TIMEZONE=America/Sao_Paulo
+
+# Database
+DB_HOST=mysql
+DB_NAME=mage
+DB_USER=mage
+DB_PASS=mage
+
+# Admin
+ADMIN_FIRSTNAME=firstname;
+ADMIN_LASTNAME=lastname;
+ADMIN_EMAIL=email@email.com;
+ADMIN_USER=admin;
+ADMIN_PASS=admin123;
+
+bin/magento setup:install \
+--base-url=http://magento2.local \
+--backend-frontname=backoffice \
+--use-rewrites=1 \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=elasticsearch \
+--language=$MAGE_LANGUAGE \
+--currency=$MAGE_CURRENCY \
+--timezone=$MAGE_TIMEZONE \
+--db-host=$DB_HOST \
+--db-name=$DB_NAME \
+--db-user=$DB_USER \
+--db-password=$DB_PASS \
+--admin-firstname=$ADMIN_FIRSTNAME \
+--admin-lastname=$ADMIN_LASTNAME \
+--admin-email=$ADMIN_EMAIL \
+--admin-user=$ADMIN_USER \
+--admin-password=$ADMIN_PASS;
+
+echo ""

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+echo "Creating an user...";
+
+# Admin
+ADMIN_FIRSTNAME=firstname;
+ADMIN_LASTNAME=lastname;
+ADMIN_EMAIL=email@email.com;
+ADMIN_USER=admin;
+ADMIN_PASS=admin123;
+
+bin/magento admin:user:create \
+--admin-firstname=$ADMIN_FIRSTNAME \
+--admin-lastname=$ADMIN_LASTNAME \
+--admin-email=$ADMIN_EMAIL \
+--admin-user=$ADMIN_USER \
+--admin-password=$ADMIN_PASS;
+
+echo "";
