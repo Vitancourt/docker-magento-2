@@ -1,3 +1,30 @@
 #!/bin/sh
 
-dev/base/mage-permissions
+DIRECTORIES_PERMISSION=755
+FILES_PERMISSION=644
+
+echo "Start change directories permission to $DIRECTORIES_PERMISSION!";
+bin/cli find /src -type d -exec chmod "$DIRECTORIES_PERMISSION" {} \;
+echo "Finish change directories permission to $DIRECTORIES_PERMISSION!";
+
+echo "Start change files permission to $FILES_PERMISSION!";
+bin/cli find /src -type f -exec chmod "$FILES_PERMISSION" {} \;
+echo "Finish change files permission to $FILES_PERMISSION!";
+
+echo "Start change files permission to pub static";
+bin/cli find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+bin/cli find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+echo "Finish change files permission to pub static";
+
+
+echo "Start change files permission to cache ";
+bin/cli chmod -R 777 var;
+echo "Finish change files permission to cache";
+
+echo "Start change files permission to cache ";
+bin/cli chmod -R 777 generated;
+echo "Finish change files permission to cache";
+
+echo "Start change files permission to pub ";
+bin/cli chmod -R 777 pub;
+echo "Finish change files permission to pub";
