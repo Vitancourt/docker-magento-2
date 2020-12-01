@@ -1,7 +1,23 @@
 #!/bin/sh
 
-dev/base/create-project
+MAGE_VERSION=2.4.1
+ROOT=/src
 
-dev/base/setup-install
+echo "Installing container things"
+
+docker-compose up -d
+
+echo "Finished container installation"
+
+echo "Cloning Magento $MAGE_VERSION project..."
+
+bin/cli composer create-project \
+--repository-url=https://repo.magento.com/ \
+magento/project-community-edition="$MAGE_VERSION" "$ROOT";
+
+echo "Finished cloning magento project"
+
+
+bin/setup-magento
 
 bin/magento deploy:mode:set developer
