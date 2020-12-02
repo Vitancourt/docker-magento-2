@@ -17,7 +17,6 @@ magento/project-community-edition="$MAGE_VERSION" "$ROOT";
 
 echo "Finished cloning magento project"
 
+bin/setup-magento;
 
-bin/setup-magento
-
-bin/magento deploy:mode:set developer
+bin/magento deploy:mode:set developer;

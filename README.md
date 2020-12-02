@@ -23,7 +23,7 @@ Run:
 bin/setup
 ```
 
-If you need install another version of Magento, go to `dev/base/create-project` and edit `MAGE_VERSION`.
+If you need install another version of Magento, go to `bin/setup` and edit `MAGE_VERSION`.
 
 ## Setup install
 
