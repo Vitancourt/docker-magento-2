@@ -16,15 +16,17 @@ RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Composer last version 1.X
+RUN curl -sS https://getcomposer.org/download/1.10.17/composer.phar > composer.phar
+RUN mv composer.phar /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
 
 # Install Mailhog
 RUN wget https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64
 RUN chmod +x mhsendmail_linux_amd64
 RUN mv mhsendmail_linux_amd64 /usr/local/bin/mhsendmail
-
-RUN chown www-data /src/
-RUN chgrp www-data /src/
 
 WORKDIR /src
 
