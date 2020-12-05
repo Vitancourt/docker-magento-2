@@ -3,6 +3,10 @@
 DIRECTORIES_PERMISSION=777
 FILES_PERMISSION=777
 
+bin/cli chmod -R 777 /src;
+
+exit
+
 echo "Start change directories permission to $DIRECTORIES_PERMISSION!";
 bin/cli find /src -type d -exec chmod "$DIRECTORIES_PERMISSION" {} \;
 echo "Finish change directories permission to $DIRECTORIES_PERMISSION!";
