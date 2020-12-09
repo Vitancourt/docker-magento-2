@@ -41,5 +41,8 @@ bin/magento setup:install \
 
 echo ""
 
+bin/fix-permissions;
+
+bin/magento cache:flush;
 
 bin/magento deploy:mode:set developer;
