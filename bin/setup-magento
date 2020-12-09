@@ -40,3 +40,6 @@ bin/magento setup:install \
 --admin-password=$ADMIN_PASS;
 
 echo ""
+
+
+bin/magento deploy:mode:set developer;

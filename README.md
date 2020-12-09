@@ -10,27 +10,25 @@ chmod -R +x bin/
 mkdir web
 ```
 
-## Magento project
-
-### Existing Magento project
-
-Download Magento project and copy to "web" folder
-
-### New Magento 2.4 project
-
+## Container installation
 Run:
 ```shell script
 bin/setup
 ```
 
-If you need install another version of Magento, go to `bin/setup` and edit `MAGE_VERSION`.
-
-## Setup install
-
-Run setup install:
+# Create a new Magento project
+Run:
 ```shell script
-bin/setup
-``` 
+bin/setup-magento-new
+```
+For other Magento version change MAGE_VERSION in bin/setup-magento-new
+
+
+# For an existing project
+Run:
+```shell script
+cd web && git clone myproject
+```
 
 ## Fix file and folder permissions
 
@@ -40,6 +38,21 @@ bin/fix-permissions
 ```
 
 ## Available commands
+
+### Start containers
+```shell script
+bin/start
+```
+
+### Stop containers
+```shell script
+bin/stop
+```
+
+### Restart containers
+```shell script
+bin/restart
+```
 
 ### Create admin user
 
@@ -67,5 +80,11 @@ bin/cli command
 
 ```shell script
 bin/php
+```
+
+### Use composer in php containers
+
+```shell script
+bin/composer command
 ```
 

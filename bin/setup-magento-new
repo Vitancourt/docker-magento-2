@@ -1,0 +1,13 @@
+#!/bin/sh
+
+MAGE_VERSION=2.4.1
+ROOT=/src
+
+echo "Cloning Magento $MAGE_VERSION project..."
+
+bin/cli composer create-project \
+--repository-url=https://repo.magento.com/ \
+magento/project-community-edition="$MAGE_VERSION" "$ROOT";
+
+echo "Finished cloning magento project"
+
