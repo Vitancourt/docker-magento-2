@@ -1,4 +1,6 @@
 git config core.fileMode false
+.idea
+.vscode
 web/*
 docker/composer/*
 docker/volumes/*

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+bin/cli rm -rf var/generation/* var/cache/* var/report/* pub/static/frontend/* pub/static/adminhtml/* var/page_cache/* var/di/* generated/*;
