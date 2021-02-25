@@ -2,5 +2,6 @@ git config core.fileMode false
 .idea
 .vscode
 web/*
+web2/*
 docker/composer/*
 docker/volumes/*
