@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/build/php/Dockerfile
-    image: php_composer:7.4.4-fpm-alpine
+    image: php_composer:7.3.0-fpm-alpine
     volumes:
       - ./web:/src
       - ./docker/config/php/php.ini:/usr/local/etc/php/conf.d/php.ini

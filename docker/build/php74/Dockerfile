@@ -1,4 +1,4 @@
-FROM php:7.3.0-fpm-alpine
+FROM php:7.4.4-fpm-alpine
 
 RUN apk upgrade --update
 
@@ -12,13 +12,11 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
 # Magento 2 required extensions
 RUN docker-php-ext-install sockets
 
-RUN pecl install xdebug \
+# Install xdebug-2.9.8, wait until Xdebug 3 is fully tested
+RUN pecl install xdebug-2.9.8 \
     && docker-php-ext-enable xdebug
 
 # Install Composer
-#RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Install Composer last version 1.X
 RUN curl -sS https://getcomposer.org/download/1.10.17/composer.phar > composer.phar
 RUN mv composer.phar /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
