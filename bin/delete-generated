@@ -1,0 +1,5 @@
+#!/bin/sh
+
+bin/cli rm -R generated/code;
+
+bin/cli rm -R generated/metadata;
