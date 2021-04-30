@@ -54,6 +54,24 @@ bin/stop
 bin/restart
 ```
 
+### Required: Elastic search configutarions
+Set vm.max_map_count to at least 262144edit
+The vm.max_map_count kernel setting must be set to at least 262144 for production use.
+
+How you set vm.max_map_count depends on your platform:
+
+Linux
+
+The vm.max_map_count setting should be set permanently in /etc/sysctl.conf:
+```shell script
+grep vm.max_map_count /etc/sysctl.conf
+vm.max_map_count=262144
+```
+To apply the setting on a live system, run:
+```shell script
+sysctl -w vm.max_map_count=262144
+```
+
 ### Create admin user
 
 Go to `bin/create-admin-user` file and edit admin user data, save and run:
