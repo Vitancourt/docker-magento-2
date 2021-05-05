@@ -3,3 +3,8 @@
 bin/cli rm -R generated/code;
 
 bin/cli rm -R generated/metadata;
+
+bin/magento cache:clean;
+
+bin/fix-permissions;
+
