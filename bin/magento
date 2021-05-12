@@ -1,3 +1,5 @@
 #!/bin/sh
 
-bin/cli php bin/magento "$@"
+bin/cli php bin/magento "$@";
+
+bin/fix-permissions;
