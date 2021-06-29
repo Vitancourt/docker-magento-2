@@ -1,0 +1,2 @@
+#!/bin/sh
+bin/magento c:d layout block_html full_page translate; bin/magento c:f; bin/cli rm -rf pub/static var/view_preprocessed/ generated/ ;
