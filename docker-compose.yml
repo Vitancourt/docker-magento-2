@@ -66,14 +66,18 @@ services:
       - 1025:1025
       - 8025:8025
 
-  rabbit:
-    image: "rabbitmq:3-management"
-    hostname: "rabbit"
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'mage2.4_rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
     environment:
-      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
       RABBITMQ_DEFAULT_USER: "rabbitmq"
       RABBITMQ_DEFAULT_PASS: "rabbitmq"
-      RABBITMQ_DEFAULT_VHOST: "/"
+
+  redis:
+    container_name: mage2.4_redis
+    image: "redis"
     ports:
-      - "15672:15672"
-      - "5672:5672"
+      - "6379:6379"
